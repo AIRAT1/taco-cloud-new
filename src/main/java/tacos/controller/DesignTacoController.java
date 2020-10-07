@@ -54,7 +54,6 @@ public class DesignTacoController {
         if (errors.hasErrors()) {
             return "design";
         }
-
         log.info("Processing design: " + design);
         return "redirect:/orders/current";
     }
