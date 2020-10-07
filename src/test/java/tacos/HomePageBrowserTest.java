@@ -24,6 +24,7 @@ public class HomePageBrowserTest {
     @BeforeClass
     public static void setup() {
         browser = new HtmlUnitDriver();
+
         browser.manage().timeouts()
                 .implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -37,13 +38,15 @@ public class HomePageBrowserTest {
     public void testHomePage() {
         String homePage = "http://localhost:" + port;
         browser.get(homePage);
+
         String titleText = browser.getTitle();
         Assert.assertEquals("Taco Cloud", titleText);
+
         String h1Text = browser.findElementByTagName("h1").getText();
         Assert.assertEquals("Welcome to...", h1Text);
-        String imgSrc = browser.findElementByTagName("img").getAttribute("src");
+
+        String imgSrc = browser.findElementByTagName("img")
+                .getAttribute("src");
         Assert.assertEquals(homePage + "/images/TacoCloud.png", imgSrc);
     }
-
-
 }
