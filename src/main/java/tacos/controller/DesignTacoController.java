@@ -27,9 +27,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
-
     private TacoRepository tacoRepo;
-
     private UserRepository userRepo;
 
     @Autowired
