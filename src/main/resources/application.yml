@@ -11,6 +11,12 @@ taco:
     codes:
       abcdef: 10
 
+logging:
+  level:
+    tacos: DEBUG
+
+---
+
 spring:
   profiles: prod
 
@@ -18,6 +24,7 @@ spring:
     url: jdbc:postgresql://localhost/tacocloud
     username: root
     password: root
+    driver-class-name: org.postgresql.Driver
 
 logging:
   level:
